@@ -13,7 +13,10 @@ module.exports = () => {
                 if (result != undefined) {
                     taskId = result.taskId;
                     company.id = result.companyNumericId;
-                    return downloadPage(configurations.startupUri + result.companyNumericId);
+                    return downloadPage(configurations.startupUri + result.companyNumericId)
+                    .catch(error => {
+                        reject(error);
+                    });
                 } else {
                     reject('bad proxy now0');
                 }
@@ -89,7 +92,10 @@ module.exports = () => {
                 if (link.startsWith('javascript:void')) {
                     throw new Error('No jobs');
                 } else {
-                    return downloadPage(link);
+                    return downloadPage(link)
+                    .catch(error => {
+                        reject(error);
+                    });
                 }
             })
             .then(result => {
