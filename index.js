@@ -116,24 +116,7 @@ module.exports = () => {
                         }
                     }
                     var teamMembers = [];
-                    var founders = document.getElementsByClassName('g-lockup top larger');
-                    if(founders && founders.length > 0) {
-                        for (var j =0; j < founders.length; j++) {
-                            var fname = founders[j].getElementsByClassName('name')[0];
-                            var fbio = founders[j].getElementsByClassName('bio')[0];
-                            var founder = {}
-                            if(fname) {
-                                founder.name = fname.textContent.trim().replace(/(?:\r\n|\r|\n)/g, ' ');
-                            }
-                            if(fbio) {
-                                founder.position = fbio.textContent.trim().replace(/(?:\r\n|\r|\n)/g, ' ');
-                            }
-                            if(founder.position && founder.name) {
-                                teamMembers.push(founder);
-                            }
-                        }
-                    }
-                    var members = document.getElementsByClassName('team-members');
+                    var members = document.getElementsByClassName('team-members')[0];
                     if (members && members.length > 0) {
                         var team = members.getElementsByClassName('card');
                         for (var i = 0; i < team.length; i++) {
