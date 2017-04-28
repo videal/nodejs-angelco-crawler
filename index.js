@@ -137,6 +137,7 @@ module.exports = () => {
                 });
             })
             .then(result => {
+                console.log('founder: ' + result.founders.length);
                 for (var f = 0; f < result.founders; f++) {
                     company.founders.push(result.founders[f]);
                 }
