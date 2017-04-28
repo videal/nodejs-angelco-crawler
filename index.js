@@ -117,7 +117,7 @@ module.exports = () => {
                     }
                     var teamMembers = [];
                     var members = document.getElementsByClassName('team-members')[0];
-                    if (members && members.length > 0) {
+                    if (members) {
                         var team = members.getElementsByClassName('card');
                         for (var i = 0; i < team.length; i++) {
                             var name = team[i].getElementsByClassName('object-list-title')[0].getElementsByTagName('a')[0].text;
